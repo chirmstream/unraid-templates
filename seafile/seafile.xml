@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Seafile</Name>
+  <Repository>seafileltd/seafile-mc</Repository>
+  <Registry>https://hub.docker.com/r/seafileltd/seafile-mc</Registry>
+  <Network>dockernet</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/chirmstream/unraid-templates/issues</Support>
+  <Project>https://www.seafile.com/</Project>
+  <Overview>
+  This is an unofficial template that uses the official seafile community docker image.
+
+Seafile is an open source file sync&share solution designed for high reliability, performance and productivity. Sync, share and collaborate across devices and teams. Build your team's knowledge base with Seafile's built-in Wiki feature.
+
+  </Overview>
+  <Category>Backup: Cloud: Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile/seafile-icon-512x512.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled></DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>
+  Requirements:
+  - MariaDB or another compatible SQL server
+  Recommended but optional:
+  - memcached
+  - A reverse proxy like Nginx-Proxy-Manager
+</Requires>
+<Config Name="Port" Target="80" Default="80" Mode="tcp" Description="Web UI http port." Type="Port" Display="always-hide" Required="true" Mask="false">8089</Config>
+<Config Name="Seafile Hostname" Target="SEAFILE_SERVER_HOSTNAME" Default="" Mode="" Description="IP or hostname for this Seafile server. Examples: 192.168.1.64, seafile.mydomain.com" Type="Variable" Display="always-hide" Required="true" Mask="false">seafile.nasdex.net</Config>
+<Config Name="SQL Host" Target="DB_HOST" Default="" Mode="" Description="IP or hostname to the SQL server including the port if it's not 3306. Examples: 192.168.1.64:4444, 192.168.1.1, seafile-mariadb." Type="Variable" Display="always-hide" Required="true" Mask="false">seafile-mariadb</Config>
+<Config Name="SQL Root Password" Target="DB_ROOT_PASSWD" Default="" Mode="" Description="Root password of SQL service." Type="Variable" Display="always-hide" Required="true" Mask="false"></Config>
+<Config Name="Admin Email" Target="SEAFILE_ADMIN_EMAIL" Default="me@example.com" Mode="" Description="Specifies Seafile admin user, default is 'me@example.com'." Type="Variable" Display="always-hide" Required="true" Mask="false"></Config>
+<Config Name="Admin Password" Target="SEAFILE_ADMIN_PASSWORD" Default="asecret" Mode="" Description="Specifies Seafile admin password, default is 'asecret'." Type="Variable" Display="always-hide" Required="true" Mask="false"></Config>
+<Config Name="Data Path" Target="/shared" Default="/mnt/user/appdata/seafile/data" Mode="rw" Description="This is where all your hosted files, logs and seafile configurations will be stored." Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/seafile/</Config>
+<Config Name="SSL/TLS Port" Target="443" Default="" Mode="tcp" Description="Recommended to leave blank. Specify a port only if you intend to use SSL/TLS without a reverse proxy. Reverse proxy is recommended." Type="Port" Display="advanced-hide" Required="false" Mask="false"/>
+<Config Name="Create a Let's Encrypt Certificate" Target="SEAFILE_SERVER_LETSENCRYPT" Default="false" Mode="" Description="Seafile will request and install a SSL-Certificate by itself based on the Seafile hostanme. Only viable with SSL/TLS Port. Domain needed. Do not use when using a reverse proxy (recommended)." Type="Variable" Display="advanced-hide" Required="false" Mask="false">false</Config>
+</Container>
