@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>seafile-pro</Name>
   <Repository>docker.seadrive.org/seafileltd/seafile-pro-mc:latest</Repository>
-  <Registry>https://hub.docker.com/r/seafileltd/seafile-mc</Registry>
+  <Registry>https://hub.docker.com/r/seafileltd/seafile-pro-mc</Registry>
   <Network>seafile-net</Network>
   <MyIP/>
   <Shell>sh</Shell>
@@ -41,25 +41,21 @@ Create container from template</Overview>
   <Category>Backup: Cloud: Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:80]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/piranha771/unraid-templates/master/seafile-official/seafile-official.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile/seafile-icon-512x512.png</Icon>
+  <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-pro/seafile-icon-512x512.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1698101756</DateInstalled>
+  <DateInstalled></DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>- MariaDB or another compatible SQL server&#xD;
-- memcached is not required but you may decide you want to use it.</Requires>
+  <Requires>- MariaDB (have not tested other SQL servers, but they might work)</Requires>
   <Config Name="Port" Target="80" Default="80" Mode="tcp" Description="Web UI http port." Type="Port" Display="always-hide" Required="true" Mask="false">9090</Config>
   <Config Name="Seafile Hostname" Target="SEAFILE_SERVER_HOSTNAME" Default="" Mode="" Description="IP or hostname for this Seafile server.&#13;&#10;Examples: 192.168.1.64, seafile.mydomain.com" Type="Variable" Display="always-hide" Required="true" Mask="false">seafile.mydomain.com</Config>
   <Config Name="SQL Host" Target="DB_HOST" Default="seafile-mariadb" Mode="" Description="Name of your database container.  Due to an existing bug in seafile, we cannot set our own database IP.  But we can still communicate to it over our custom docker network using the container name instead." Type="Variable" Display="always-hide" Required="true" Mask="false">seafile-pro-mariadb</Config>
   <Config Name="SQL Root Password" Target="DB_ROOT_PASSWD" Default="changeme" Mode="" Description="Root password of SQL database you took note of earlier." Type="Variable" Display="always-hide" Required="true" Mask="false">changeme</Config>
   <Config Name="Admin Email" Target="SEAFILE_ADMIN_EMAIL" Default="me@example.com" Mode="" Description="Seafile admin user.  Recommend you change this." Type="Variable" Display="always-hide" Required="true" Mask="false">me@example.com</Config>
   <Config Name="Admin Password" Target="SEAFILE_ADMIN_PASSWORD" Default="asecret" Mode="" Description="seafile admin password" Type="Variable" Display="always-hide" Required="true" Mask="false">asecret</Config>
-  <Config Name="Storage" Target="/shared/seafile" Default="/mnt/user/seafile-pro/" Mode="rw" Description="Where user files are stored" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/seafile-pro/</Config>
+  <Config Name="Data" Target="/shared/" Default="/mnt/user/seafile-pro/" Mode="rw" Description="Where user files are stored" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/seafile-pro/</Config>
   <Config Name="SSL/TLS Port" Target="443" Default="" Mode="tcp" Description="Recommended to leave blank. Specify a port only if you intend to use SSL/TLS without a reverse proxy.&#13;&#10;Reverse proxy is recommended." Type="Port" Display="advanced-hide" Required="false" Mask="false"/>
   <Config Name="Create a Let's Encrypt Certificate" Target="SEAFILE_SERVER_LETSENCRYPT" Default="false" Mode="" Description="Seafile will request and install a SSL-Certificate by itself based on the Seafile hostanme.&#13;&#10;Only viable with SSL/TLS Port. Domain needed. Do not use when using a reverse proxy (recommended)." Type="Variable" Display="advanced-hide" Required="false" Mask="false">false</Config>
-  <Config Name="Logs" Target="/shared/logs" Default="/mnt/user/appdata/seafile-pro/logs" Mode="rw" Description="Seafile Logs" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/seafile-pro/logs</Config>
-  <Config Name="SSL (if used)" Target="/shared/ssl" Default="/mnt/user/seafile-pro/ssl" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="false" Mask="false">/mnt/user/seafile-pro/ssl</Config>
-  <Config Name="bootstrap.conf" Target="/shared/bootstrap.conf" Default="/mnt/user/seafile-pro/bootstrap.conf" Mode="rw" Description="This file does not exist by default. You can create it by your self, and write the configuration of files similar to the samples folder." Type="Path" Display="advanced-hide" Required="false" Mask="false">/mnt/user/seafile-pro/bootstrap.conf</Config>
 </Container>
