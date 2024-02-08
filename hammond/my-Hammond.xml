@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Hammond</Name>
+  <Repository>alfhou/hammond</Repository>
+  <Registry>https://github.com/alfhou/hammond</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>A self-hosted vehicle expense tracking system with support for multiple users.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/hammond/icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled></DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Host Port 1" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">3000</Config>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/hammond/config</Config>
+  <Config Name="data" Target="/assets" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/hammond/assets</Config>
+  <Config Name="JWT_SECRET" Target="JWT_SECRET" Default="" Mode="" Description="The secret used to sign the JWT token. There is a default value but it is important that you change it to something else" Type="Variable" Display="always" Required="false" Mask="true">7uEqVYX&59fXEiMksNH%emkrhqs66^7q6KqJF2&rf9AP!n9N7Ry*TKusVoSiEA*J</Config>
+</Container>
