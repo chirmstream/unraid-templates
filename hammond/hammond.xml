@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Hammond</Name>
+  <Name>hammond</Name>
   <Repository>alfhou/hammond</Repository>
-  <Registry>https://github.com/alfhou/hammond</Registry>
+  <Registry>https://hub.docker.com/r/alfhou/hammond</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
-  <Project/>
+  <Support>https://github.com/chirmstream/unraid-templates/issues</Support>
+  <Project>https://github.com/AlfHou/hammond</Project>
+  <Screenshot>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/hammond/screenshot.jpg</Screenshot>
   <Overview>A self-hosted vehicle expense tracking system with support for multiple users.</Overview>
-  <Category/>
+  <Category>Other:<Category/>
   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/hammond/hammond.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/hammond/icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
