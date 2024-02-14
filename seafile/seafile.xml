@@ -34,7 +34,7 @@ Set the "Network Type: seafile-net"&#xD;
 Note the root password you used.</Overview>
   <Category>Backup: Cloud: Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:80]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/piranha771/unraid-templates/master/seafile-official/seafile-official.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile/seafile.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile/seafile-icon-512x512.png</Icon>
   <ExtraParams/>
   <PostArgs/>
