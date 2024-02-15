@@ -11,7 +11,9 @@
   <Project>https://github.com/AlfHou/hammond</Project>
   <Screenshot>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/hammond/screenshot.jpg</Screenshot>
   <Overview>A self-hosted vehicle expense tracking system with support for multiple users.</Overview>
-  <Category/>
+  <Beta>False</Beta>
+  <Category>Other:</Category>
+  <Date>2024-02-14</Date>
   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/hammond/hammond.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/hammond/icon.png</Icon>
