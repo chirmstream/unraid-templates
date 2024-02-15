@@ -27,5 +27,5 @@
   <Config Name="Host Port 1" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">3000</Config>
   <Config Name="config" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/hammond/config</Config>
   <Config Name="data" Target="/assets" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/hammond/assets</Config>
-  <Config Name="JWT_SECRET" Target="JWT_SECRET" Default="" Mode="" Description="The secret used to sign the JWT token. There is a default value but it is important that you change it to something else" Type="Variable" Display="always" Required="false" Mask="true">7uEqVYX&59fXEiMksNH%emkrhqs66^7q6KqJF2&rf9AP!n9N7Ry*TKusVoSiEA*J</Config>
+  <Config Name="JWT_SECRET" Target="JWT_SECRET" Default="" Mode="" Description="The secret used to sign the JWT token. There is a default value but it is important that you change it to something else" Type="Variable" Display="always" Required="false" Mask="true">UZFwEsRR8Ty3BhGosLb7WSZsUg8gSjnBvprpFVRqgs6MGyRWj78B9H8Er6pDn8xYgNdb5C</Config>
 </Container>
