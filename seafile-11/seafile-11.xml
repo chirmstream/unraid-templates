@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>seafile</Name>
-  <Repository>seafileltd/seafile-mc</Repository>
+  <Repository>seafileltd/seafile-mc:11.0-latest</Repository>
   <Registry>https://hub.docker.com/r/seafileltd/seafile-mc</Registry>
   <Network>seafile-net</Network>
   <MyIP/>
@@ -9,8 +9,8 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/chirmstream/unraid-templates/issues</Support>
   <Project>https://www.seafile.com/</Project>
-  <Screenshot>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile/screenshot1.png</Screenshot>
-  <Screenshot>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile/screenshot2.jpg</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-11/screenshot1.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-11/screenshot2.jpg</Screenshot>
   <Overview>This is an unofficial template that uses the official seafile community docker image.&#xD;
 &#xD;
 Seafile is an open source file sync&amp;amp;share solution designed for high reliability, performance and productivity. Sync, share and collaborate across devices and teams. Build your team's knowledge base with Seafile's built-in Wiki feature.&#xD;
@@ -34,8 +34,8 @@ Set the "Network Type: seafile-net"&#xD;
 Note the root password you used.</Overview>
   <Category>Backup: Cloud: Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:80]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile/seafile.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile/seafile-icon-512x512.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-11/seafile-11.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-11/seafile-icon-512x512.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
