@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>seafile</Name>
+  <Repository>seafileltd/seafile-mc:11.0-latest</Repository>
+  <Registry>https://hub.docker.com/r/seafileltd/seafile-mc</Registry>
+  <Network>seafile-net</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/chirmstream/unraid-templates/issues</Support>
+  <Project>https://www.seafile.com/</Project>
+  <Screenshot>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-11/screenshot1.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-11/screenshot2.jpg</Screenshot>
+  <Overview>This is an unofficial template that uses the official seafile community docker image.&#xD;
+&#xD;
+Seafile is an open source file sync&amp;amp;share solution designed for high reliability, performance and productivity. Sync, share and collaborate across devices and teams. Build your team's knowledge base with Seafile's built-in Wiki feature.&#xD;
+&#xD;
+# STOP!&#xD;
+Before continuing you must create your own custom docker network for Seafile to work.  &#xD;
+### Step 1&#xD;
+In the webui naviate to Settings&amp;gt;Docker&#xD;
+Enable "Preserve user defined networks"&#xD;
+### Step 2&#xD;
+Open unraid terminal and type:&#xD;
+docker network create seafile-net&#xD;
+Verify it was created by running "docker network list"&#xD;
+### Step 3&#xD;
+Make sure "Network Type:" under the ADVANCED VIEW is set to seafile-net.  We will set our Database and memcached (if used) to also use seafile-net&#xD;
+### Step 4 - Database setup (assuming MariaDB)&#xD;
+Create a new database container that has nothing on it.  (This is very important and it will not work if you skip this step!)&#xD;
+### Step 5&#xD;
+Set the container name to: "seafile-mariadb" (this is important!)&#xD;
+Set the "Network Type: seafile-net"&#xD;
+Note the root password you used.</Overview>
+  <Category>Backup: Cloud: Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-11/seafile-11.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-11/seafile-icon-512x512.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled></DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>- MariaDB or another compatible SQL server&#xD;
+- memcached is not required but you may decide you want to use it.</Requires>
+  <Config Name="Port" Target="80" Default="80" Mode="tcp" Description="Web UI http port." Type="Port" Display="always-hide" Required="true" Mask="false">8080</Config>
+  <Config Name="Seafile Hostname" Target="SEAFILE_SERVER_HOSTNAME" Default="" Mode="" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">seafile.example.com</Config>
+  <Config Name="SQL Host" Target="DB_HOST" Default="seafile-mariadb" Mode="" Description="Name of your database container.  Due to an existing bug in seafile, we cannot set our own database IP.  But we can still communicate to it over our custom docker network using the container name instead." Type="Variable" Display="always-hide" Required="true" Mask="false">seafile-mariadb</Config>
+  <Config Name="SQL Root Password" Target="DB_ROOT_PASSWD" Default="changeme" Mode="" Description="Root password of SQL database you took note of earlier." Type="Variable" Display="always-hide" Required="true" Mask="false">changeme</Config>
+  <Config Name="Admin Email" Target="SEAFILE_ADMIN_EMAIL" Default="" Mode="" Description="Seafile admin user.  Recommend you change this." Type="Variable" Display="always-hide" Required="true" Mask="false">admin@changeme.com</Config>
+  <Config Name="Admin Password" Target="SEAFILE_ADMIN_PASSWORD" Default="" Mode="" Description="Defualt admin password." Type="Variable" Display="always-hide" Required="true" Mask="false">changeme</Config>
+  <Config Name="Data" Target="/shared/" Default="/mnt/user/seafile/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/seafile/</Config>
+  <Config Name="SSL/TLS Port" Target="443" Default="" Mode="tcp" Description="Recommended to leave blank. Specify a port only if you intend to use SSL/TLS without a reverse proxy.&#13;&#10;Reverse proxy is recommended." Type="Port" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Create a Let's Encrypt Certificate" Target="SEAFILE_SERVER_LETSENCRYPT" Default="false" Mode="" Description="Seafile will request and install a SSL-Certificate by itself based on the Seafile hostanme.&#13;&#10;Only viable with SSL/TLS Port. Domain needed. Do not use when using a reverse proxy (recommended)." Type="Variable" Display="advanced-hide" Required="false" Mask="false">false</Config>
+</Container>
