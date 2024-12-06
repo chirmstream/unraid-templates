@@ -50,7 +50,7 @@ Whatever you have set here should be the same as ``SEAFILE_SERVER_HOSTNAME`` in 
 
 ## Notes
 
-* ``CSRF Verification Failed`` - Starting in version 11, if you are behind a reverse proxy you;ll get this error.  You need to make a modification to your ``seahub_settings.py`` file.  If you did not change the default location that would be under ``/mnt/user/seafile/seafile/conf/seahub_settings.py``.
+* ``CSRF Verification Failed`` - Starting in version 11, if you are behind a reverse proxy you'll get this error.  You need to make a modification to your ``seahub_settings.py`` file.  If you did not change the default location that would be under ``/mnt/user/seafile/seafile/conf/seahub_settings.py``.
 
     nano /mnt/user/seafile/seafile/conf/seahub_settings.py
 
