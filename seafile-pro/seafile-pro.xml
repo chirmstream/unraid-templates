@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>seafile-pro</Name>
-  <Repository>docker.seadrive.org/seafileltd/seafile-pro-mc:latest</Repository>
+  <Repository>docker.seadrive.org/seafileltd/seafile-pro-mc:11.0-latest</Repository>
   <Registry>https://hub.docker.com/r/seafileltd/seafile-pro-mc</Registry>
   <Network>seafile-net</Network>
   <MyIP/>
