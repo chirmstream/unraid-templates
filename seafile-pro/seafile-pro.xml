@@ -41,6 +41,7 @@ Enter your given username and password&#xD;
 ### Step 7&#xD;
 Create container from template</Overview>
   <Category>Backup: Cloud: Productivity: Tools:</Category>
+  <Deprecated>true</Deprecated>
   <WebUI>http://[IP]:[PORT:80]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-pro/seafile-pro.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-pro/seafile-icon-512x512.png</Icon>
