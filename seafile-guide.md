@@ -48,10 +48,48 @@ If you're going to run seafile behind a reverse proxy you will need to set ``SER
 
 Whatever you have set here should be the same as ``SEAFILE_SERVER_HOSTNAME`` in the seafile template.  If you are using letsencrypt with a reverse proxy make sure to use ``https``.
 
-## Notes
+## Troubleshooting
 
 * ``CSRF Verification Failed`` - Starting in version 11, if you are behind a reverse proxy you'll get this error.  You need to make a modification to your ``seahub_settings.py`` file.  If you did not change the default location that would be under ``/mnt/user/seafile/seafile/conf/seahub_settings.py``.
 
     nano /mnt/user/seafile/seafile/conf/seahub_settings.py
 
 and add ``CSRF_TRUSTED_ORIGINS = ["https://seafile.example.tld"]`` to the bottom of ``seahub_settings.py``, where ``seafile.example.tld`` is your domain.  Credit to GusFit on reddit for this [fix](https://www.reddit.com/r/unRAID/comments/1f4ebke/guide_for_installing_the_latest_version_of/?share_id=KqhG1zJ_OS02tbUWIEVL8&utm_content=2&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1).
+
+
+## Advanced
+### Migrating from Pro to Community edition
+#### Step 1 
+Read the [manual](https://manual.seafile.com/11.0/deploy_pro/migrate_from_seafile_community_server/) page, see the very bottom for how to go from Pro > Community.
+
+#### Step 2
+Backup your current Seafile instance just in case.
+
+#### Step 3
+Change your docker template repository to the community version on Dockerhub.  ``seafileltd/seafile-mc``  Make sure you specify the same major version in the docker tag of your current install.  Pull the new docker image.  If Seafile automatically runs the migration script this is all you'll need to do.
+
+#### Step 4 
+To manually run the migration script open a new unraid terminal and start a bash session inside the docker container.
+
+    docker exec -t -i seafile /bin/bash
+
+Make sure to change ``seafile`` to match the name of your docker container.  From here you can use typicall unix commands such as ``ls`` and ``cd`` to navigate inside the docker container.  
+
+#### Step 5
+Navigate to ``/opt/seafile/seafile-server-XX.XX.XX`` where ``XX.XX.XX`` is your current server version and stop the server.
+
+    ./seafile.sh stop
+    ./seahub.sh stop
+
+Navigate to ``/opt/seafile/seafile-server-XX.XX.XX/upgrade`` and run the ``minor-upgrade.sh`` script.
+
+    ./minor-upgrade.sh
+
+Navigate back to ``/opt/seafile/seafile-server-XX.XX.XX/`` and start the server.
+
+    ./seafile.sh start
+    ./seahub.sh start
+
+Your server should now be working again.  Personally, I've had issues with this if it is the FIRST time changing versions, it won't work.  For me, everytime I'm migrating for the first time, before running the ``minor-upgrade.sh`` script I would also need to run ``pro.py setup --migrate`` as well.
+
+    seafile/seafile-pro-server-XX.XX.XX/pro/pro.py setup --migrate
