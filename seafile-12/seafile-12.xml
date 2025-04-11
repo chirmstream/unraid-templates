@@ -11,23 +11,28 @@
   <Project>https://www.seafile.com/</Project>
   <Overview>Official seafile community docker image.&#xD;
 &#xD;
-Seafile is an open source file sync&amp;amp;share solution designed for high reliability, performance and productivity. Sync, share and collaborate across devices and teams. Build your team's knowledge base with Seafile's built-in Wiki feature.&#xD;
-&#xD;
-# WAIT!&#xD;
-Please see the directions I've written here before proceding. &#xD;
+Seafile is an open source file sync&amp;amp;share solution designed for high reliability, performance and productivity. Sync, share and collaborate across devices and teams. Build your team's knowledge base with Seafile's built-in Wiki feature.&#xD;&#xD;
 
-https://github.com/chirmstream/unraid-templates/blob/main/seafile-guide.md &#xD; 
+## Seafile 12 Upgrade Notes:
+- https://manual.seafile.com/12.0/upgrade/upgrade_notes_for_12.0.x/ &#xD;&#xD;
 
-And you should also read the Seafile Admin Manual page for docker installation. &#xD; 
+## Please see the unRAID installation guide I've written here before proceding.&#xD;
+- https://github.com/chirmstream/unraid-templates/blob/main/seafile-guide.md &#xD;&#xD;
 
-https://manual.seafile.com/12.0/setup/setup_ce_by_docker/  &#xD; 
+## Please read the Seafile Admin Manual page for docker installation for further understanding of how seafile is setup.&#xD; 
+- https://manual.seafile.com/12.0/setup/setup_ce_by_docker/ &#xD;&#xD; 
 
 Although Seafile 12 is a stable release, this template has not been fully tested with unRAID, and the prior version(s) template(s).  Proceed at your own risk.
+
   </Overview>
   <Beta>True</Beta>
   <Category>Backup: Cloud: Productivity: Tools:</Category>
-  <Changes>04-10-2025: Beta template for Seafile 12 released.
-  04-11-2025: Fixed example variables.  Improved variable descriptions.</Changes>
+  <Changes>
+### 04-11-2025
+- Fixed example variables.  Improved variable descriptions.  Improved template overview.
+### 04-10-2025
+- Initial template for Seafile 12 released.  Template marked as BETA.
+  </Changes>
   <WebUI>http://[IP]:[PORT:80]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/chirmstream/unraid-templates/master/seafile-12/seafile-12.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-12/seafile-icon-512x512.png</Icon>
