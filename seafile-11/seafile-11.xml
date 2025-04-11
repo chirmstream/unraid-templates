@@ -16,7 +16,10 @@
 Seafile is an open source file sync&amp;amp;share solution designed for high reliability, performance and productivity. Sync, share and collaborate across devices and teams. Build your team's knowledge base with Seafile's built-in Wiki feature.&#xD;
 &#xD;
 # STOP!&#xD;
-Before continuing you must create your own custom docker network for Seafile to work.  &#xD;
+Before continuing you must create your own custom docker network for Seafile to work.  &#xD;&#xD;
+Please see the guide I wrote for installing seafile on unRAID.&#xD;
+https://github.com/chirmstream/unraid-templates/blob/main/seafile-11/seafile-11_guide.md &#xD;&#xD;
+
 ### Step 1&#xD;
 In the webui naviate to Settings&amp;gt;Docker&#xD;
 Enable "Preserve user defined networks"&#xD;
