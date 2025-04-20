@@ -105,7 +105,7 @@ Lastly, restart your seafile server.  If you open a supported document in the we
     and add ``CSRF_TRUSTED_ORIGINS = ["https://seafile.example.tld"]`` to the bottom of ``seahub_settings.py``, where ``seafile.example.tld`` is your domain.  Credit to GusFit on reddit for this [fix](https://www.reddit.com/r/unRAID/comments/1f4ebke/guide_for_installing_the_latest_version_of/?share_id=KqhG1zJ_OS02tbUWIEVL8&utm_content=2&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1).
 
 
-* ``AxiosError`` When creating wikis.  Seafile 12 brought a new wiki feature, however it is dependant on SeaDoc, which is a seperate container without which, will create the ``AxiosError``.  I have not tested or tried to setup SeaDoc on unRAID, so if you want to do this you'll be on your own.  Personally, I have OnlyOffice integrated into my Seafile instance so I've never needed to setup SeaDoc.  If anyone does get it working, I'd be glad to setup a template for you if you'd like.
+* ``AxiosError`` When creating wikis.  Seafile 12 brought a new wiki feature, however it is dependant on SeaDoc, which is a seperate container without which, will create the ``AxiosError``.  I have not tested or tried to setup SeaDoc on unRAID, so if you want to do this you'll be on your own.  Personally, I have OnlyOffice integrated into my Seafile instance so I've never needed to setup SeaDoc.  If anyone does get it working, I'd be glad to setup a template for you if you'd like.  Please see official [SeaDoc Manual](https://manual.seafile.com/latest/extension/setup_seadoc/#deploy-seadoc-standalone).
 
 
 ## Advanced
