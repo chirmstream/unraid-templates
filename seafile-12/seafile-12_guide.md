@@ -108,6 +108,19 @@ Lastly, restart your seafile server.  If you open a supported document in the we
 * ``AxiosError`` When creating wikis.  Seafile 12 brought a new wiki feature, however it is dependant on SeaDoc, which is a seperate container without which, will create the ``AxiosError``.  I have not tested or tried to setup SeaDoc on unRAID, so if you want to do this you'll be on your own.  Personally, I have OnlyOffice integrated into my Seafile instance so I've never needed to setup SeaDoc.  If anyone does get it working, I'd be glad to setup a template for you if you'd like.  Please see official [SeaDoc Manual](https://manual.seafile.com/latest/extension/setup_seadoc/#deploy-seadoc-standalone).
 
 
+* ``Page unavailable``
+    ``Sorry, but the requested page is unavailable due to a server hiccup.``
+    ``Our engineers have been notified, so check back later.`` When loggging into the newly created admin account after setting up the server.  Try recreating the admin account using the ``reset-admin.sh`` script.  Start by opening a bash terminal inside the docker container.
+
+        docker exec -t -i seafile /bin/bash
+
+    You will have to change ``seafile`` to match the name of your docker container, (``seafile-12``) for example.  Navigate to ``/opt/seafile/seafile-server-xx.xx.xx`` where ``xx.xx.xx`` is the version of your server and run the reset-admin.sh script.
+
+        ./reset-admin.sh
+
+    You should now be able to login to the admin account you just created.
+
+
 ## Advanced
 ### Migrating from Pro to Community edition
 #### Step 1 
