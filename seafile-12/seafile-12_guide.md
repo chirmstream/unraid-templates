@@ -1,4 +1,4 @@
-# Seafile-11 Guide (unRAID)
+# Seafile-12 Guide (unRAID)
 
 ## Step 1 - System prep
 In the webui navigate to Settings>Docker and enable "Preserve user defined networks"  You will have to disable docker and switch to the advanced view.
