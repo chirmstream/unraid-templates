@@ -120,6 +120,9 @@ Lastly, restart your seafile server.  If you open a supported document in the we
 
     You should now be able to login to the admin account you just created.
 
+* ``Error, please contact administrator.`` When logging in via Single-Sign On with Google as OAuth Provider.  If you are using the template provided in the Seafile [Docs](https://manual.seafile.com/12.0/config/oauth/#sample-settings) You will need to update the OAuth settings in your ``seahub_settings.py`` file by changing ``OAUTH_USER_INFO_URL = 'https://www.googleapis.com/oauth2/v1/userinfo'`` to ``OAUTH_USER_INFO_URL = 'https://www.googleapis.com/oauth2/v3/userinfo'``  as the v1 endpoint does not properly return the needed field from the OAuth endpoint.
+  
+
 
 ## Advanced
 ### Migrating from Pro to Community edition
