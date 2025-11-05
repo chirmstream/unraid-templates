@@ -20,7 +20,7 @@ In the Mariadb template settings change the network type to ``seafile-net``
 
 Go ahead and remove ``MYSQL_DATABASE``, ``MYSQL_USER``, ``MYSQL_PASSWORD``, and ``REMOTE_SQL``.  Seafile will connect to Mariadb with the root password and create all necessary users and databases.
 
-Don't forget to change your appdata path if want the database to be stored in a different location that default.
+Don't forget to change your appdata path if want the database to be stored in a different location than default.
 <img src="/screenshots/database-template.png?ref_type=heads">  
 
 If you have other Mariadb containers on your server, you'll want to rename this one.  Mine is named ``seafile-mariadb``.
