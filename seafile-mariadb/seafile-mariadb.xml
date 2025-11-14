@@ -7,17 +7,24 @@
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/linuxserver/docker-mariadb/issues/new/choose</Support>
+  <Support>https://github.com/chirmstream/unraid-templates/issues</Support>
   <Project>https://mariadb.org/</Project>
-  <Overview>Mariadb(https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.</Overview>
+  <Overview>Mariadb(https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.&#xD;
+  Preconfigured for seafile server.
+  </Overview>
+  <Beta>False</Beta>
   <Category>Tools:Utilities Network:Management</Category>
+  <Changes>
+### 11-14-2025
+- Initial template for Seafile 13 released.
+  </Changes>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/linuxserver/templates/main/unraid/mariadb.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1763159727</DateInstalled>
+  <DateInstalled></DateInstalled>
   <DonateText>Donations</DonateText>
   <DonateLink>https://www.linuxserver.io/donate</DonateLink>
   <Requires/>
