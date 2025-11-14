@@ -7,13 +7,20 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://forums.unraid.net/topic/69490-support-jj9987-redis/</Support>
+  <Support>https://github.com/chirmstream/unraid-templates/issues</Support>
   <Project>https://redis.io/</Project>
-  <Overview>Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. Based on official Redis Docker image.</Overview>
+  <Overview>Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. Based on official Redis Docker image.&#xD;
+  Template has been preconfigured for running a seafile server.
+  </Overview>
+  <Beta>False</Beta>
   <Category>Network:Management Productivity: Tools:Utilities</Category>
+  <Changes>
+### 11-14-2025
+- Initial template for Seafile 13 released.
+  </Changes>
   <WebUI/>
-  <TemplateURL>https://raw.githubusercontent.com/juusujanar/unraid-templates/master/Redis.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/juusujanar/unraid-templates/master/img/Redis-logo.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/chirmstream/unraid-templates/refs/heads/main/seafile-redis/seafile-redis.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-redis/redis-icon.jpg</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
