@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>seafile-redis</Name>
+  <Repository>redis</Repository>
+  <Registry>https://registry.hub.docker.com/_/redis/</Registry>
+  <Network>seafile-net</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/chirmstream/unraid-templates/issues</Support>
+  <Project>https://redis.io/</Project>
+  <Overview>Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. Based on official Redis Docker image.&#xD;
+  Template has been preconfigured for running a seafile server.
+  </Overview>
+  <Beta>True</Beta>
+  <Category>Network:Management Productivity: Tools:Utilities</Category>
+  <Changes>
+### 11-14-2025
+- Initial BETA template for Seafile 13 released.
+  </Changes>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/chirmstream/unraid-templates/refs/heads/main/seafile-redis/seafile-redis.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/chirmstream/unraid-templates/main/seafile-redis/redis-icon.jpg</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled></DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Redis Port" Target="6379" Default="6379" Mode="tcp" Description="This is Redis default connection port." Type="Port" Display="always-hide" Required="true" Mask="{8}">6379</Config>
+  <TailscaleStateDir/>
+</Container>
