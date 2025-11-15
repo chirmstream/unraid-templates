@@ -11,24 +11,19 @@ Verify that the docker network was successfully created
 
     docker network list
 
-## Step 2 - Install database(s)
-In the Mariadb template settings change the network type to ``seafile-net``
-<img src="/screenshots/docker-network-type.png?ref_type=heads">
-* I've been using Mariadb for my database and had good success.  I believe you can use your choise of SQL server database but the only one I've tested is Mariadb.  Seafile can utilize memcached, but I have not tried setting it up, as I've been happy with the performance with only Mariadb.  
-* I recomend the ``linuxserver`` Mariadb container.
-* The root password will be required for the seafile template later
+## Step 2 - Install SQL database
+Search the unraid community app store for ``seafile-mariadb`` and install it.  The template is pre-configured to store data in ``/mnt/user/appdata/seafile-mariadb``  Make sure to select a secure password for the SQL root password, as well as a secure password for the SQL user ``seafile``.  You will need these passwords for the seafile container configurations.
 
-Go ahead and remove ``MYSQL_DATABASE``, ``MYSQL_USER``, ``MYSQL_PASSWORD``, and ``REMOTE_SQL``.  Seafile will connect to Mariadb with the root password and create all necessary users and databases.
+## Step 3 - Install memcache server
+Search the unraid community app store for ``seafile-redis`` and install it.
 
-Don't forget to change your appdata path if want the database to be stored in a different location than default.
-<img src="/screenshots/database-template.png?ref_type=heads">  
+## Step 4 - Install seafile
+Search the unraid community app store for ``seafile-13`` and install it.  Make sure to fill out ``INIT_SEAFILE_MYSQL_ROOT_PASSWORD`` and ``SEAFILE_MYSQL_DB_PASSWORD`` you saved from step 2.  Generate a secure ``JWT_PRIVATE_KEY`` using the command ``pwgen -s 40 1``.  If you have trouble uploading files in the web browser make sure ``SEAFILE_SERVER_HOSTNAME`` and ``SEAFILE_SERVER_PROTOCOL`` are correct.
 
-If you have other Mariadb containers on your server, you'll want to rename this one.  Mine is named ``seafile-mariadb``.
+You should now be able to see the login screen.  Go ahead and login with the admin credentials setup in the docker template and make sure everything works
+<img src="/screenshots/seafile-login.png?ref_type=heads">  
 
-## Step 3 - Install seafile
-Make sure to set the network type to ``seafile-net`` for this template as well.  ``SQL Host`` will be the name of your database container, in my case I called it ``seafile-mariadb``.  Here is where you will need the SQL root password.
-
-## Step 3a - Seafile Pro setup (optional)
+## Step 4a - Seafile Pro setup (optional)
 If you want to use seafile professional (free for up to 3 users) instead of the community edition you will need to create at [https://customer.seafile.com/](https://customer.seafile.com/).  You will be given a username and password for seafile's private docker registry.  To save the credentials in unRAID open a new terminal and type:
 
     docker login docker.seadrive.org
@@ -39,16 +34,7 @@ Edit the seafile template repository to ``docker.seadrive.org/seafileltd/seafile
 
 You can also go to https://docker.seadrive.org and browse the images to find valid tags.
 
-## Step 4 - Configure seafile
-You should now be able to see the login screen.  Go ahead and login with the admin credentials setup in the docker template
-<img src="/screenshots/seafile-login.png?ref_type=heads">  
-
-If you're going to run seafile behind a reverse proxy you will need to set ``SERVICE_URL`` and ``FILE_SERVER_ROOT`` located in the ``System Admin`` webui section.
-<img src="/screenshots/seafile-admin-settings.png?ref_type=heads">
-
-Whatever you have set here should be the same as ``SEAFILE_SERVER_HOSTNAME`` in the seafile template.  If you are using letsencrypt with a reverse proxy make sure to use ``https``.
-
-## Step 4A - Seafile Garbage Collection.
+## Step 5 - Seafile Garbage Collection.
 Why do we need to run garbage collection?  The [seafile manual](https://manual.seafile.com/11.0/maintain/seafile_gc/) explains it quite well.  
 
 >Seafile uses storage de-duplication technology to reduce storage usage. The underlying data blocks will not be removed immediately after you delete a file or a library. As a result, the number of unused data blocks will increase on Seafile server.
