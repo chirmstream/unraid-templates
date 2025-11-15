@@ -12,11 +12,11 @@
   <Overview>Mariadb(https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.&#xD;
   Preconfigured for seafile server.
   </Overview>
-  <Beta>False</Beta>
+  <Beta>True</Beta>
   <Category>Tools:Utilities Network:Management</Category>
   <Changes>
 ### 11-14-2025
-- Initial template for Seafile 13 released.
+- Initial BETA template for Seafile 13 released.
   </Changes>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/linuxserver/templates/main/unraid/mariadb.xml</TemplateURL>

@@ -12,11 +12,11 @@
   <Overview>Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. Based on official Redis Docker image.&#xD;
   Template has been preconfigured for running a seafile server.
   </Overview>
-  <Beta>False</Beta>
+  <Beta>True</Beta>
   <Category>Network:Management Productivity: Tools:Utilities</Category>
   <Changes>
 ### 11-14-2025
-- Initial template for Seafile 13 released.
+- Initial BETA template for Seafile 13 released.
   </Changes>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/chirmstream/unraid-templates/refs/heads/main/seafile-redis/seafile-redis.xml</TemplateURL>
